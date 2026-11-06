@@ -25,6 +25,11 @@ bool EstVivant (){
     }
 void affiche(){
     std::cout <<"le personnage se nomme " << nom << " il a " << pv << " pv"<< " et il a " << pa << " points d'attaques" << std::endl; 
+    if (EstVivant()){
+        std::cout << "le héros est vivant !!" << std::endl;
+    }  else {
+        cout << "le héros est mort ..." << std::endl;
+    }
 }
 };
 
@@ -48,6 +53,11 @@ class Creature{
     }
     void affiche(){
          std::cout <<"la creature possede " << pv << " pv " << ", il a " << pa << " points d'attaques " << " et il est niveau " << niveau << std::endl;
+         if (EstVivant()){
+            std::cout << "la creature est vivante!! " << endl;
+         } else{
+            cout << "la creature est morte..." << endl;
+         }
     }
    
 };
@@ -58,8 +68,5 @@ int main() {
 
     h.affiche();
     c.affiche();
-        cout << h.EstVivant() << endl;
-    cout << c.EstVivant() << endl;
-
     return 0;
 }
