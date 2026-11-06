@@ -23,6 +23,12 @@ bool EstVivant (){
             return false;
         }
     }
+    void subitDegats(int degats){
+         pv -= degats;
+         if (pv<0){
+            pv = 0;
+         } 
+    }
 void affiche(){
     std::cout <<"le personnage se nomme " << nom << " il a " << pv << " pv"<< " et il a " << pa << " points d'attaques" << std::endl; 
     if (EstVivant()){
@@ -51,6 +57,12 @@ class Creature{
             return false;
         }
     }
+     void subitDegats(int degats){
+         pv -= degats;
+         if (pv<0){
+            pv = 0;
+         } 
+    }
     void affiche(){
          std::cout <<"la creature possede " << pv << " pv " << ", il a " << pa << " points d'attaques " << " et il est niveau " << niveau << std::endl;
          if (EstVivant()){
@@ -67,6 +79,8 @@ int main() {
     Creature c(80, 10, 3);
 
     h.affiche();
+    c.affiche();
+    c.subitDegats(100);
     c.affiche();
     return 0;
 }
