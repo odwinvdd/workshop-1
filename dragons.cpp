@@ -70,6 +70,10 @@ class Creature{
             pv = 0;
          } 
     }
+        int attaque() {
+        int degats = pa + rand() % 6;
+        return degats;
+    }
     void affiche(){
          std::cout <<"la creature possede " << pv << " pv " << ", il a " << pa << " points d'attaques " << " et il est niveau " << niveau << std::endl;
          if (EstVivant()){
@@ -85,7 +89,12 @@ int main() {
     srand(time(NULL));
     Heros h( "Hrun", 10, 10 , 8 );
     Creature c(10, 10, 5 );
-
+    h.affiche();
+    c.affiche();
+    int degats = h.attaque();
+    c.subitDegats(degats);
+    degats = c.attaque();
+    h.subitDegats(degats);
     h.affiche();
     c.affiche();
     return 0;
