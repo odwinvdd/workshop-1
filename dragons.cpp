@@ -16,8 +16,15 @@ class Heros{
     pv = p;
     pa = a;
 }
+bool EstVivant (){
+        if (pv>0){
+            return true;
+        } else {
+            return false;
+        }
+    }
 void affiche(){
-    std::cout <<"le personnage se nomme " << nom << " il a " << pv << " pv"<< " et il a " << pa << " points d'attaques" << std::endl;
+    std::cout <<"le personnage se nomme " << nom << " il a " << pv << " pv"<< " et il a " << pa << " points d'attaques" << std::endl; 
 }
 };
 
@@ -32,9 +39,17 @@ class Creature{
         pa= a;
         niveau= n;
     }
+ bool EstVivant (){
+        if (pv>0){
+            return true;
+        } else {
+            return false;
+        }
+    }
     void affiche(){
          std::cout <<"la creature possede " << pv << " pv " << ", il a " << pa << " points d'attaques " << " et il est niveau " << niveau << std::endl;
     }
+   
 };
 
 int main() {
@@ -43,6 +58,8 @@ int main() {
 
     h.affiche();
     c.affiche();
+        cout << h.EstVivant() << endl;
+    cout << c.EstVivant() << endl;
 
     return 0;
 }
