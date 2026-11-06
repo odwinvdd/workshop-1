@@ -10,11 +10,13 @@ class Heros{
     string nom; 
     int pv;
     int pa;
+    int niveau;
     public:
-    Heros( string n, int p, int a ){
+    Heros( string n, int p, int a, int niv ){
     nom = n; 
     pv = p;
     pa = a;
+    niveau = niv;
 }
 bool EstVivant (){
         if (pv>0){
@@ -35,7 +37,7 @@ bool EstVivant (){
         return degats;
       }  
 void affiche(){
-    std::cout <<"le personnage se nomme " << nom << " il a " << pv << " pv"<< " et il a " << pa << " points d'attaques" << std::endl; 
+    std::cout <<"le personnage se nomme " << nom << " il a " << pv << " pv"<< " il a " << pa << " points d'attaques" << " et il est niveau " << niveau << std::endl; 
     if (EstVivant()){
         std::cout << "le héros est vivant !!" << std::endl;
     }  else {
@@ -81,12 +83,10 @@ class Creature{
 
 int main() {
     srand(time(NULL));
-    Heros h("Arthur", 100, 15);
-    Creature c(80, 10, 3);
+    Heros h( "Hrun", 10, 10 , 8 );
+    Creature c(10, 10, 5 );
 
     h.affiche();
-    c.affiche();
-    c.subitDegats(h.attaque());
     c.affiche();
     return 0;
 }
