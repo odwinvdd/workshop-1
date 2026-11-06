@@ -28,7 +28,12 @@ bool EstVivant (){
          if (pv<0){
             pv = 0;
          } 
-    }
+        }
+
+      int attaque() {
+        int degats = pa + rand()% 6;
+        return degats;
+      }  
 void affiche(){
     std::cout <<"le personnage se nomme " << nom << " il a " << pv << " pv"<< " et il a " << pa << " points d'attaques" << std::endl; 
     if (EstVivant()){
@@ -75,12 +80,13 @@ class Creature{
 };
 
 int main() {
+    srand(time(NULL));
     Heros h("Arthur", 100, 15);
     Creature c(80, 10, 3);
 
     h.affiche();
     c.affiche();
-    c.subitDegats(100);
+    c.subitDegats(h.attaque());
     c.affiche();
     return 0;
 }
