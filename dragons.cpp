@@ -16,6 +16,9 @@ class Heros{
     pv = p;
     pa = a;
 }
+void affiche(){
+    std::cout <<"le personnage se nomme " << nom << " il a " << pv << " pv"<< " et il a " << pa << " points d'attaques" << std::endl;
+}
 };
 
 class Creature{
@@ -29,4 +32,17 @@ class Creature{
         pa= a;
         niveau= n;
     }
+    void affiche(){
+         std::cout <<"la creature possede " << pv << " pv " << ", il a " << pa << " points d'attaques " << " et il est niveau " << niveau << std::endl;
+    }
 };
+
+int main() {
+    Heros h("Arthur", 100, 15);
+    Creature c(80, 10, 3);
+
+    h.affiche();
+    c.affiche();
+
+    return 0;
+}
